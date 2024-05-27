@@ -1,11 +1,28 @@
+import { useEffect, useRef } from 'react';
 import { useAppListQuery } from '@/store/queries/useAppData';
 
 import Card from '@/components/card';
 import StyledLoadingDiv from '@/components/common/styled/StyledLoadingDiv';
 import StyledErrorDiv from '@/components/common/styled/StyledErrorDiv';
+import useIntersectionObserver from './useIntersectionObserver';
 
 const Dashboard = () => {
   const { data: apps, isLoading, isError } = useAppListQuery();
+
+  const observerRef = useRef(null);
+  const [observe, unobserve] = useIntersectionObserver(() => {
+    console.log('Intersection Observer callback called');
+
+    // pagination logic here
+
+    // if there is no data from api. unobserve the observer
+  });
+
+  useEffect(() => {
+    console.log('###');
+
+    observerRef.current && observe(observerRef.current);
+  }, [apps]);
 
   if (isLoading) {
     return <StyledLoadingDiv>Fetching App Data...</StyledLoadingDiv>;
@@ -36,6 +53,8 @@ const Dashboard = () => {
               ))}
         </div>
       </div>
+
+      <div ref={observerRef} id="observer" style={{ height: "50px", marginBottom: "10px" }}></div>
     </div>
   );
 };
