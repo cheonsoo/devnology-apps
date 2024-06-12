@@ -13,7 +13,7 @@ const StyledTitleText = css`
   text-align: left;
 `;
 
-export default function MarkdownH2(props: any) {
+export default function MarkdownH2(props: { children?: React.ReactNode }) {
   return (
     <div css={StyledTitleContainer}>
       <div css={StyledTitleText}>{props.children}</div>

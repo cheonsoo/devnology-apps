@@ -1,6 +1,4 @@
-import React from 'react';
-
-export default function MarkdownIframe(props: any) {
+export default function MarkdownIframe(props: { src: string }) {
   return (
     <div>
       <iframe src={props.src} />

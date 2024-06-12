@@ -1,14 +1,38 @@
 {
   "compilerOptions": {
-    "strict": true,
     "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "noUnusedLocals": true,
+    "strict": true,
+    "target": "es6",
+    "lib": [
+        "ES5",
+        "ES6",
+        "ESNext",
+        "DOM"
+    ],
     "skipLibCheck": true,
+    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "isolatedModules": true,
+    "noUnusedLocals": true,
     "sourceMap": true,
     "jsx": "react-jsx",
-    "moduleResolution": "node"
-  }
+  },
+  "references": [ // 미래에 추가할 패키지들
+    {
+      "path": "packages/core"
+    },
+    {
+      "path": "packages/example"
+    },
+  ],
+  "exclude": [
+    "packages/**/dist/**"
+  ],
+  "include": []
 }

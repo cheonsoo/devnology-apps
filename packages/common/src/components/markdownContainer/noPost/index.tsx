@@ -10,7 +10,7 @@ const NoMarkdownContentDiv = css`
   font-size: 30px;
 `;
 
-function NoPost(props: any) {
+function NoPost(props: { content?: string }) {
   return <div css={NoMarkdownContentDiv}>{props.content || 'No Post Yet'}</div>;
 }
 

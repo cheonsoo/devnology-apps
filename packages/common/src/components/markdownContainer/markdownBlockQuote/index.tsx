@@ -25,7 +25,7 @@ const StyledBlockQuote = css`
   }
 `;
 
-export default function MarkdownBlockQuote({ node, ...props }) {
+export default function MarkdownBlockQuote({ ...props }) {
   return (
     <div css={StyledBlockQuoteContainer}>
       <div css={StyledBlockQuote}>{props.children}</div>

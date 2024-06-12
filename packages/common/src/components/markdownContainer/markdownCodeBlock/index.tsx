@@ -10,6 +10,6 @@ const StyledInlineCodeBlock = css`
   text-align: left;
 `;
 
-export default function StyledInlineCode(props: any) {
+export default function StyledInlineCode(props: { children: React.ReactNode }) {
   return <div css={StyledInlineCodeBlock}>{props.children}</div>;
 }

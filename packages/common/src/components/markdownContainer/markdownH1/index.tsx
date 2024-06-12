@@ -9,7 +9,7 @@ const StyledH1 = css`
 `;
 
 interface IMKH2Props {
-  children?: any;
+  children?: React.ReactNode;
 }
 
 export default function MarkdownH1(props: IMKH2Props) {

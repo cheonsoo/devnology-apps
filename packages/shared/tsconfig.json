@@ -29,6 +29,5 @@
     "noFallthroughCasesInSwitch": true,
     "preserveSymlinks": false
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src"]
 }
